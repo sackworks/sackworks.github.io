@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello Sreejith</h1>
-<img src="1379107417393.jpg" />
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+	<head>
+		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<style>
+			#moe{ 
+				position:absolute;
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Hello Sreejith</h1>
+		<img id="sreej" src="imgs/1379107417393.jpg" />
+		<img id="moe" src="imgs/sreejee_moe.png" />
+		<p>I'm hosted with GitHub Pages.</p>
+		<script>
+			$(document).mousemove(function(e){
+		    	$("#moe").css({left:e.pageX, top:e.pageY});
+			});
+		</script>
+	</body>
 </html>
