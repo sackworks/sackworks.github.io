@@ -3,21 +3,71 @@
 	<head>
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<style>
-			#moe{ 
-				position:absolute;
-				width: 30%;
+			body {
+				cursor: pointer;
+				font-family: "arial", "helvetica", "sans serif";				
+			}
+			body * {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;	
+			} 
+			#sreej {
+				max-width: 100%;
+			}
+			#moe {
+				width: 20%;
+				max-width: 100%;
+				margin-left: 4em;
+			}
+			#devil {
+				width: 4%; 
+				max-width: 91px;
+				margin: 4em; 				
+			} 
+			#moe, #devil { 
+				position: absolute;							
+				z-index: 1;					
+			}
+			.sreejith-goodies { 				
+				width: 25%;
+				height: 300px;
+				border: solid 1px #eee;
+				background: #eee;
+				float: right;				
+			}
+			.sreejith-goodies section {
+				height: 50%;
+			}
+			.sreejithhead {								
+				width: 75%;
+			}
+			.label {
+				position: relative;				
+				padding: 132px 0;				
+			}
+			.label span {
+				display: block;				
+				background: #ddd;
+				border-top: solid 1px #fff;				
+				padding: 10px;				
 			}
 		</style>
 	</head>
 	<body>
-		<h1>Hello Sreejith</h1>
-		<img id="sreej" src="imgs/1379107417393.jpg" />
-		<img id="moe" src="imgs/sreejee_moe.png" />
-		<p>I'm hosted with GitHub Pages.</p>
-		<script>
-			$(document).mousemove(function(e){
-		    	$("#moe").css({left:e.pageX, top:e.pageY});
-			});
-		</script>
+		<nav class="sreejith-goodies">
+			<section>
+				<img id="moe" src="imgs/sreejee_moe.png" />				
+				<div class="label"><span>The Mighty Moe</span></div>
+			</section>
+			<section>
+				<img id="devil" src="imgs/sreejee_beard.png" />
+				<div class="label"><span>The Devil</span></div>
+			</section>							
+		</nav> 
+		<section class="sreejithhead">
+			<img id="sreej" src="imgs/sreejithhead.png" />			
+		</section>		
+		
+		<script src="js/badukoos.js"></script>
 	</body>
 </html>
