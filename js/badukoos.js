@@ -6,7 +6,14 @@ var Badukoos = (function(w, d) {
 			$(e.data).css("margin", 0);								
     		$(e.data).css({left:e.pageX, top:e.pageY});			
 		};		
+	
+	/**
 		
+	**/
+	$("#sreej").on('click', function(e){
+		$(e.target).css("transform", "translateX(10)");
+	});
+
 	$(sreejeeGoodies).each(function(i, thing){		
 		triggies.push(false);
 

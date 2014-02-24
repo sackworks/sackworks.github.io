@@ -12,7 +12,7 @@
 				-moz-box-sizing: border-box;	
 			} 
 			#sreej {
-				max-width: 100%;
+				max-width: 50%;
 			}
 			#moe {
 				width: 20%;
@@ -29,17 +29,36 @@
 				z-index: 1;					
 			}
 			.sreejith-goodies { 				
-				width: 25%;
+				width: 40%;
 				height: 300px;
-				border: solid 1px #eee;
-				background: #eee;
-				float: right;				
+				float: right;
+				border: solid 1px #fff;
+				background: #ddd;
+				border-radius: 8px;								
 			}
 			.sreejith-goodies section {
 				height: 50%;
 			}
-			.sreejithhead {								
-				width: 75%;
+			.sreejith-goodies .social {
+				position: absolute;				
+			}
+			.sreejith-goodies .social ul {
+				list-style: none;
+				margin-left: -40px;
+				padding: 0;
+				width: 50px;
+				height: 200px;
+			}
+			.sreejith-goodies .social li.facebook {
+				/*width: 100%;
+				height: 25%;*/
+			}
+			.sreejith-goodies .social li img {
+				max-width: 75%;
+			}
+			.sreejithhead {
+				text-align: center;								
+				width: 60%;
 			}
 			.label {
 				position: relative;				
@@ -48,13 +67,35 @@
 			.label span {
 				display: block;				
 				background: #ddd;
-				border-top: solid 1px #fff;				
-				padding: 10px;				
+				border-top: solid 1px #fff;
+				border-bottom: solid 1px #bbb;			
+				padding: 10px;
+				border-radius: 6px;
+				color: #666;
+				text-transform: uppercase;
+				font-size: 12px;
+				text-shadow: -1px -1px #eee;
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<nav class="sreejith-goodies">
+			<div class="social">
+				<ul>
+					<li class="facebook">					
+						<img src="imgs/icons/facebook.png" />
+					</li>
+					<li class="twitter">
+						<a href="https://twitter.com/share">
+							<img src="imgs/icons/twitter.png" />
+						</a>											
+					</li>
+					<li class="googleplus">
+						<img src="imgs/icons/googleplus.png" />
+					</li>
+				</ul>
+			</div>
 			<section>
 				<img id="moe" src="imgs/sreejee_moe.png" />				
 				<div class="label"><span>The Mighty Moe</span></div>
@@ -63,11 +104,10 @@
 				<img id="devil" src="imgs/sreejee_beard.png" />
 				<div class="label"><span>The Devil</span></div>
 			</section>							
-		</nav> 
+		</nav> 		
 		<section class="sreejithhead">
-			<img id="sreej" src="imgs/sreejithhead.png" />			
+			<img id="sreej" src="imgs/sreejithhead-2.png" />			
 		</section>		
-		
 		<script src="js/badukoos.js"></script>
 	</body>
 </html>
