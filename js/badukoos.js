@@ -1,5 +1,5 @@
 var Popup = function(url, size, w) {
-	return w.open(url, 'popup', "width=500,menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"); 
+	return w.open(url, 'popup', "width=500,height=500,menubar=yes,toolbar=no,resizable=yes,scrollbars=yes,status=yes"); 
 };
 var Badukoos = (function(w, d) {
 	
@@ -40,12 +40,15 @@ var Badukoos = (function(w, d) {
 		$(link).on("click", function(e) {
 			
 			e.preventDefault();
-			w.open(link.href, 'popup', "width=500,height=500,scrollbars=yes,status=yes"); 
+			
 			if(link.href.indexOf("twitter") > 0) {						
 				TwitterPopup = Popup(link.href, null, w);
 			}
 			if(link.href.indexOf("facebook") > 0) {									
 				FacebookPopup = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);
+			}
+			if(link.href.indexOf("plus") > 0) {
+				GPlus = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);	
 			}
 		});
 	});
