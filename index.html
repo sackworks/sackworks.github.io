@@ -6,7 +6,8 @@
 		<meta property="og:type" content="badukoos">
 		<meta property="og:site_name" content="badukoos">
 		<meta property="og:url" content="http://www.badukoos.com">
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<!--<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>-->
+		<script src="js/jquery-2.1.0.min.js"></script>
 		<style>
 			body {
 				cursor: pointer;
@@ -16,26 +17,29 @@
 				box-sizing: border-box;
 				-moz-box-sizing: border-box;	
 			} 
+			figure { margin: 0; padding: 10px; }
 			#sreej {
 				max-width: 50%;
 			}
 			#moe {
 				width: 20%;
-				max-width: 100%;
-				margin-left: 4em;
+				max-width: 100%;				
+			}
+			#smooth {
+				width: 15%;
+				max-width: 100%;				
 			}
 			#devil {
 				width: 4%; 
-				max-width: 91px;
-				margin: 4em; 				
+				max-width: 91px;							
 			} 
-			#moe, #devil { 
+			#moe, #devil, #smooth { 
 				position: absolute;							
 				z-index: 1;					
 			}
 			.sreejith-goodies { 				
 				width: 40%;
-				height: 300px;
+				min-height: 300px;
 				float: right;
 				border: solid 1px #fff;
 				background: #ddd;
@@ -67,7 +71,7 @@
 			}
 			.label {
 				position: relative;				
-				padding: 132px 0;				
+				padding: 100px 0 0;				
 			}
 			.label span {
 				display: block;				
@@ -105,14 +109,18 @@
 					</li>
 				</ul>
 			</div>
-			<section>
-				<img id="moe" src="imgs/sreejee_moe.png" />				
+			<figure>
+				<img id="moe" src="imgs/curly-moe.png" />
 				<div class="label"><span>The Mighty Moe</span></div>
-			</section>
-			<section>
-				<img id="devil" src="imgs/sreejee_beard.png" />
+			</figure>
+			<figure>
+				<img id="smooth" src="imgs/thesmooth.png" />				
+				<div class="label"><span>The smooth</span></div>
+			</figure>
+			<figure>
+				<img id="devil" src="imgs/devil.png" />
 				<div class="label"><span>The Devil</span></div>
-			</section>							
+			</figure>							
 		</nav> 		
 		<section class="sreejithhead">
 			<img id="sreej" src="imgs/sreejithhead-2.png" />			

@@ -4,7 +4,7 @@ var Popup = function(url, size, w) {
 var Badukoos = (function(w, d) {
 	
 	var triggies = [],
-		sreejeeGoodies = ["#moe", "#devil"],
+		sreejeeGoodies = ["#moe", "#devil", "#smooth"],
 		moveGoodie = function(e){
 			$(e.data).css("margin", 0);								
     		$(e.data).css({left:e.pageX, top:e.pageY});			
