@@ -4,106 +4,19 @@
 		<meta property="og:title" content="Oh Haloooooo!">
 		<meta property="og:description" content="It started one afternoon, with a devilish grin, and the facial hair to match">
 		<meta property="og:type" content="badukoos">
+		<meta property="og:image" content="imgs/icons/imgs/finished-face.png">
 		<meta property="og:site_name" content="badukoos">
 		<meta property="og:url" content="http://www.badukoos.com">
+		<link rel="stylesheet" href="css/style.css">
 		<!--<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>-->
 		<script src="js/jquery-2.1.0.min.js"></script>
-		<style>
-			body {
-				cursor: pointer;
-				font-family: "arial", "helvetica", "sans serif";				
-			}
-			body * {
-				box-sizing: border-box;
-				-moz-box-sizing: border-box;	
-			} 
-			figure { margin: 0; padding: 10px; }
-			#sreej {
-				max-width: 50%;
-			}
-			#sreej.on {
-			    -webkit-transform:rotate(-10deg);
-			    -moz-transform:rotate(-10deg);
-			    -ms-transform:rotate(-10deg);
-			    transform:rotate(-10deg)
-			}
-			#sreej.off {
-				-webkit-transform:rotate(10deg);
-			    -moz-transform:rotate(10deg);
-			    -ms-transform:rotate(10deg);
-			    transform:rotate(10deg)
-			}
-			#moe {
-				width: 20%;
-				max-width: 100%;				
-			}
-			#smooth {
-				width: 15%;
-				max-width: 100%;				
-			}
-			#devil {
-				width: 4%; 
-				max-width: 91px;							
-			} 
-			#moe, #devil, #smooth { 
-				position: absolute;							
-				z-index: 1;					
-			}
-			.sreejith-goodies { 				
-				width: 40%;
-				min-height: 300px;
-				float: right;
-				border: solid 1px #fff;
-				background: #ddd;
-				border-radius: 8px;								
-			}
-			.sreejith-goodies section {
-				height: 50%;
-			}
-			.sreejith-goodies .social {
-				position: absolute;				
-			}
-			.sreejith-goodies .social ul {
-				list-style: none;
-				margin-left: -40px;
-				padding: 0;
-				width: 50px;
-				height: 200px;
-			}
-			.sreejith-goodies .social li.facebook {
-				/*width: 100%;
-				height: 25%;*/
-			}
-			.sreejith-goodies .social li img {
-				max-width: 75%;
-			}
-			.sreejithhead {
-				text-align: center;								
-				width: 60%;
-			}
-			.label {
-				position: relative;				
-				padding: 100px 0 0;				
-			}
-			.label span {
-				display: block;				
-				background: #ddd;
-				border-top: solid 1px #fff;
-				border-bottom: solid 1px #bbb;			
-				padding: 10px;
-				border-radius: 6px;
-				color: #666;
-				text-transform: uppercase;
-				font-size: 12px;
-				text-shadow: -1px -1px #eee;
-				text-align: center;
-			}
-		</style>
+		<script src="js/html2canvas.js"></script>
+		
 	</head>
 	<body>
 		<nav class="sreejith-goodies">
 			<div class="social">
-				<ul>
+				<ul class="social-list">
 					<li class="facebook">
 						<a href="https://www.facebook.com/sharer/sharer.php">					
 							<img src="imgs/icons/facebook.png" />
