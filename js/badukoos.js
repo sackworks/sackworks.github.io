@@ -83,6 +83,22 @@ var Badukoos = (function(w, d) {
     			generatedimage = convertCanvasToImage(canvas);
     			document.body.appendChild(generatedimage);
     			injectIframeContent();
+    			var data = $("body > img").attr("src");
+				$.ajax({
+				        type: "POST",        
+				        url: 'https://www.googleapis.com/upload/storage/v1beta2/b/badukoos-bucket/o?uploadType=media&name=myObject',        
+				        async: false,        
+				        data: $("body > img").attr("src"),
+				        headers: {
+				            "Content-Type":"image/png",
+				            "Content-Length": data.length,
+				            "Authorization": "Bearer hHMMd3HQQdW2ATpKGOV4RLg1"           
+				        },
+				        success: function () {
+
+				        alert("Thanks!"); 
+				        }
+				    });
   			},
   			width: 600,
   			height: 600
