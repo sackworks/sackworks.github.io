@@ -83,8 +83,28 @@ var Badukoos = (function(w, d) {
 				if(link.href.indexOf("twitter") > 0) {						
 					TwitterPopup = Popup(link.href, null, w);
 				}
-				if(link.href.indexOf("facebook") > 0) {									
-					FacebookPopup = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);
+				if(link.href.indexOf("facebook") > 0) {
+					//FacebookPopup = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);
+					debugger;
+					console.log(window);
+					FB.ui(
+					  {
+					    method: 'feed',
+					    name: 'Facebook Dialogs',
+					    link: 'https://developers.facebook.com/docs/dialogs/',
+					    picture: 'http://fbrell.com/f8.jpg',
+					    caption: 'Reference Documentation',
+					    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+					  },
+					  function(response) {
+					    if (response && response.post_id) {
+					      alert('Post was published.');
+					    } else {
+					      alert('Post was not published.');
+					    }
+					  }
+					);
+
 				}
 				if(link.href.indexOf("plus") > 0) {
 					GPlus = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);	
