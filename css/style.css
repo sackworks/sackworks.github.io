@@ -38,6 +38,12 @@ figure { margin: 0; padding: 10px; }
 	position: absolute;							
 	z-index: 1;					
 }
+#share {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	padding: 20px;
+}
 .sreejith-goodies { 				
 	width: 40%;
 	min-height: 300px;
@@ -51,16 +57,6 @@ figure { margin: 0; padding: 10px; }
 }
 .sreejith-goodies .social {
 	position: absolute;				
-}
-.sreejith-goodies .social iframe {
-	margin-top: 16px;
-}
-.sreejith-goodies .social ul, .sreejith-goodies .social iframe {
-	list-style: none;
-	margin-left: -40px;
-	padding: 0;
-	width: 50px;
-	height: 200px;
 }
 .sreejith-goodies .social li.facebook {
 	/*width: 100%;
@@ -89,4 +85,24 @@ figure { margin: 0; padding: 10px; }
 	font-size: 12px;
 	text-shadow: -1px -1px #eee;
 	text-align: center;
+}
+#share {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	padding: 20px;
+	background: white;
+	width: 20%;
+	border-radius: 5px;
+	border: solid 1px #ddd;
+	box-shadow: 1px 1px 6px #999;
+	text-align: center;
+}
+#share h5 { 
+	text-transform: uppercase;
+	margin: 10px;
+}
+#share iframe {
+	width: 100px;
+	height: 50px;
 }

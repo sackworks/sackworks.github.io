@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta property="og:title" content="Oh Haloooooo!">
-		<meta property="og:description" content="It started one afternoon, with a devilish grin, and the facial hair to match">
-		<meta property="og:type" content="badukoos">
-		<meta property="og:image" content="imgs/icons/imgs/finished-face.png">
-		<meta property="og:site_name" content="badukoos">
-		<meta property="og:url" content="http://www.badukoos.com">
+	<head>		
 		<link rel="stylesheet" href="css/style.css">
 		<!--<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>-->
 		<script src="js/jquery-2.1.0.min.js"></script>
@@ -15,7 +9,7 @@
 	</head>
 	<body>
 		<nav class="sreejith-goodies">
-			<div class="social">
+			<!-- <div class="social">
 				<ul class="social-list">
 					<li class="facebook">
 						<a href="https://www.facebook.com/sharer/sharer.php">					
@@ -33,7 +27,7 @@
 					</a>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 			<figure>
 				<img id="moe" src="imgs/curly-moe.png" />
 				<div class="label"><span>The Mighty Moe</span></div>
@@ -49,7 +43,15 @@
 		</nav> 		
 		<section class="sreejithhead">
 			<img id="sreej" src="imgs/sreejithhead-2.png" />			
-		</section>		
+			<div class="js-buttons-for-save-share">
+				<button>save your sreejith</button>
+				<form>
+					<input type="file" id="fileElem" multiple="" style="display:none">
+					<button>share your sreejith</button>	
+				</form>				
+			</div>			
+		</section>	
+		<div id="share" style="display: none"><h5>Share your Sreejith</h5></div>		
 		<script src="js/badukoos.js"></script>
 	</body>
 </html>
