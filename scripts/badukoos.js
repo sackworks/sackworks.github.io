@@ -1,5 +1,4 @@
 window.URL = window.URL || window.webkitURL;
-
 var Popup = function(url, size, w) {	
 	return w.open(url, 'popup', "width=500,height=500,menubar=yes,toolbar=no,resizable=yes,scrollbars=yes,status=yes"); 
 };
@@ -76,6 +75,8 @@ var Badukoos = (function(w, d) {
 	/**
 	**/
 	var setSocialListeners = function() {
+		debugger;
+		console.log(w);
 		$(".social-list a").each(function(i, link) {
 			$(link).on("click", function(e) {
 			console.log("LINK", link);				
@@ -85,14 +86,13 @@ var Badukoos = (function(w, d) {
 				}
 				if(link.href.indexOf("facebook") > 0) {
 					//FacebookPopup = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);
-					debugger;
-					console.log(window);
+					//console.log(w);
 					FB.ui(
 					  {
 					    method: 'feed',
 					    name: 'Facebook Dialogs',
 					    link: 'https://developers.facebook.com/docs/dialogs/',
-					    picture: 'http://fbrell.com/f8.jpg',
+					    picture: getFileObjectUrl(),
 					    caption: 'Reference Documentation',
 					    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
 					  },
@@ -190,7 +190,7 @@ var Badukoos = (function(w, d) {
 	};
 	var openShare = function(url) {
 		
-		injectIframeContent(url, $shareEl);
+		//injectIframeContent(url, $shareEl);
 		$shareEl.show();
 		
 	};	
@@ -201,4 +201,4 @@ var Badukoos = (function(w, d) {
 		attachSocialToolsListeners  : setSocialListeners
 	}	
 })(window, document);
-Badukoos.init();
+setTimeout(Badukoos.init, 1000);

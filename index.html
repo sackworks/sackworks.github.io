@@ -3,19 +3,20 @@
 	<head>		
 		<link rel="stylesheet" href="css/style.css">
 		<!--<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>-->
-		<script src="js/jquery-2.1.0.min.js"></script>
-		<script src="js/html2canvas.js"></script>
+		<!--<script src="scripts/require.js"></script>-->
+		<script src="scripts/jquery-2.1.0.min.js"></script>		
+		<script src="scripts/html2canvas.js"></script>
 		
 	</head>
 	<body>
-		 <div id="fb-root"></div>
+		<div id="fb-root"></div>
 	    <script>
 	      window.fbAsyncInit = function() {
 	        FB.init({
 	          appId      : '569488763158593',
 	          status     : true,
 	          xfbml      : true
-	        });
+	        });	        				        	       
 	      };
 
 	      (function(d, s, id){
@@ -69,7 +70,28 @@
 				</form>				
 			</div>			
 		</section>	
-		<div id="share" style="display: none"><h5>Share your Sreejith</h5></div>		
-		<script src="js/badukoos.js"></script>
+		<div id="share" style="display: none">
+			<h5>Share your Sreejith</h5>
+			<div class="social">
+				<ul class="social-list">
+					<li class="facebook">
+						<a href="https://www.facebook.com/sharer/sharer.php">					
+							<img src="imgs/icons/facebook.png" />
+						</a>
+					</li>
+					<li class="twitter">
+						<a href="https://twitter.com/share">
+							<img src="imgs/icons/twitter.png" />
+						</a>											
+					</li>
+					<li class="googleplus">
+					<a href="https://plus.google.com/share">
+						<img src="imgs/icons/googleplus.png" />
+					</a>
+					</li>
+				</ul>
+			</div>
+		</div>		
+		<script src="scripts/badukoos.js"></script>
 	</body>
 </html>
