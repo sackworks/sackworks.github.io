@@ -75,7 +75,6 @@ var Badukoos = (function(w, d) {
 	/**
 	**/
 	var setSocialListeners = function() {
-		debugger;
 		console.log(w);
 		$(".social-list a").each(function(i, link) {
 			$(link).on("click", function(e) {
