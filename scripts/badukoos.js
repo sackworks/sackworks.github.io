@@ -76,20 +76,21 @@ var Badukoos = (function(w, d) {
 	var setSocialListeners = function() {		
 		
 		$(".social-list a").each(function(i, link) {
-			$(link).on("click", function(e) {			
+			$(link).on("click", function(e) {
+				var badukoosCacheBuster = "?"+Math.floor(Math.random()*1000000);
 				e.preventDefault();				
 				if(link.href.indexOf("twitter") > 0) {						
 					TwitterPopup = Popup(link.href, null, w);
 				}
 				if(link.href.indexOf("facebook") > 0) {					
 					//FacebookPopup = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);
-					console.log("setSocialListeners::", this.image);
+					console.log("setSocialListeners::", badukoosCacheBuster);
 					FB.ui(
 					  {
 					    method: 'feed',
 					    name: 'Facebook Dialogs',
 					    link: 'https://developers.facebook.com/docs/dialogs/',
-					    picture: 'http://ancient-lake-9185.herokuapp.com/assets',
+					    picture: 'http://ancient-lake-9185.herokuapp.com/assets'+badukoosCacheBuster,
 					    caption: 'Reference Documentation',
 					    description: 'testing'
 					  },
