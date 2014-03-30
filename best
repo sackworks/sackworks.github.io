@@ -1,9 +1,0 @@
-$(".tdb-home").append("<div class='new-logo'>The daily be<span>a</span>st</div>");
-var best = (function(yValue, node){
-  yValue = yValue + 10;
-  while(yValue < 100) {
-    node.style.webkitTransform = "translateY('+yValue+')";
-  setTimeout(best, 400);
-  }
-}(10, document.querySelector(".new-logo span")));
-document.body.appendChild("<style>height:60px;width:256px;font-family:'TitlingGothicFBStandCond','Arial Narrow',Arial,sans-serif;text-transform:uppercase;color:white;background: #EE2E24;font-size:33px;padding:0 10px;font-weight: normal;letter-spacing:1px;</style");

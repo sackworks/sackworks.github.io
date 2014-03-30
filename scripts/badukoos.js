@@ -8,7 +8,7 @@ var Badukoos = (function(w, d) {
 	var init = function () {
 		setListeners();
 		setSocialListeners();
-		bobbleHead();		
+		bobbleHead("oops");		
 	},
 	triggies = [],
 	sreejeeGoodies = ["#moe", "#wwmoe", "#devil", "#smooth"],
@@ -23,29 +23,46 @@ var Badukoos = (function(w, d) {
 	/**
 		Shake the sreejee
 	**/			
-	var bobbleHead = function() {
+	var bobbleHead = function(type, auto) {
+		debugger;
 		var $sreejHead = $(sreejHead);
-		$sreejHead.on('mousedown', function(e){
+		if(auto) {
+			// don't set a handler, just bobble the head and put it back in place
+			document.getElementById(type).play();
+			return;
+		}					
+		$sreejHead.on('mousedown', function(e){			
 			$(e.target).removeClass("off").addClass("on");
+			document.getElementById(type).play();
 		});
 		$sreejHead.on('mouseup', function(e){
-			$(e.target).removeClass("on").addClass("off");
+			$(e.target).removeClass("on").addClass("off");			
 			setTimeout(function() {$(e.target).removeClass("off").removeClass("on");}, 100);
-		});	
+		});
+		
 		
 	};
 	/**
 		Attach all behaviors 
 	**/	
 	var setListeners = function() {		
-		$(sreejeeGoodies).each(function(i, thing){		
+		$(sreejeeGoodies).each(function(i, thing){
+
 			triggies.push(false);
 			$(thing).on("click", function(e) {
+				var random = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
 				if(!triggies[i]) {
 					$(d).bind('mousemove', thing, moveGoodie);
 				} else {					
 					$(d).unbind('mousemove', moveGoodie);
 					makeCanvasSnapshot();
+					if(thing.indexOf("devil") !== -1) { 
+						
+						bobbleHead("yeah", true) 
+					} else {
+						
+						bobbleHead("no"+random, true);
+					}
 				}			
 				triggies[i] = !triggies[i];
 			});
@@ -60,7 +77,8 @@ var Badukoos = (function(w, d) {
 		$(".js-buttons-for-save-share").on("click", "button", function(e){
 			e.preventDefault();
 			sharePanel(e); 
-		});	
+		});
+
 	};
 	/**
 		Reveal Share 
@@ -164,7 +182,8 @@ var Badukoos = (function(w, d) {
 
 	var openShare = function() {				
 		$shareEl.show();		
-	};			
+	};
+
 	return {
 		init 						: init,
 		attachSocialToolsListeners  : setSocialListeners
