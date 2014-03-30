@@ -23,10 +23,10 @@ var Badukoos = (function(w, d) {
 	/**
 		Shake the sreejee
 	**/			
-	var bobbleHead = function(type, auto) {
-		debugger;
+	var bobbleHead = function(type, auto) {		
 		var $sreejHead = $(sreejHead);
 		if(auto) {
+
 			// don't set a handler, just bobble the head and put it back in place
 			document.getElementById(type).play();
 			return;
@@ -45,28 +45,40 @@ var Badukoos = (function(w, d) {
 	/**
 		Attach all behaviors 
 	**/	
-	var setListeners = function() {		
-		$(sreejeeGoodies).each(function(i, thing){
-
-			triggies.push(false);
-			$(thing).on("click", function(e) {
+	var setListeners = function() {	
+		$("#moe, #wwmoe, #devil, #smooth").draggable();
+		$(sreejHead).droppable({
+			drop: function(e) {
 				var random = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-				if(!triggies[i]) {
-					$(d).bind('mousemove', thing, moveGoodie);
-				} else {					
-					$(d).unbind('mousemove', moveGoodie);
-					makeCanvasSnapshot();
-					if(thing.indexOf("devil") !== -1) { 
-						
-						bobbleHead("yeah", true) 
-					} else {
-						
-						bobbleHead("no"+random, true);
-					}
-				}			
-				triggies[i] = !triggies[i];
-			});
+				console.log(e.toElement);
+		    	makeCanvasSnapshot();		    	
+				if($(e.toElement).attr("id").indexOf("devil") !== -1) { 						
+				 	bobbleHead("yeah", true) 
+				 } else {						
+					bobbleHead("no"+random, true);
+				}
+		  }
 		});
+		// $(sreejeeGoodies).each(function(i, thing){
+
+		// 	triggies.push(false);
+		// 	$(thing).on("click", function(e) {
+		// 		debugger;
+		// 		var random = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+		// 		if(!triggies[i]) {
+		// 			//$(d).bind('mousemove', thing, moveGoodie);
+		// 		} else {					
+		// 			//$(d).unbind('mousemove', moveGoodie);
+		// 			makeCanvasSnapshot();
+		// 			if(thing.indexOf("devil") !== -1) { 						
+		// 				bobbleHead("yeah", true) 
+		// 			} else {						
+		// 				bobbleHead("no"+random, true);
+		// 			}
+		// 		}			
+		// 		triggies[i] = !triggies[i];
+		// 	});
+		// });
 		$(w).on("resize", function() {	
 			$(sreejeeGoodies).each(function(i, thing){
 				if($(thing).attr("style") != "") {
@@ -106,17 +118,17 @@ var Badukoos = (function(w, d) {
 					FB.ui(
 					  {
 					    method: 'feed',
-					    name: 'Facebook Dialogs',
+					    name: 'Choose a Moe for Sreejith',
 					    link: 'https://developers.facebook.com/docs/dialogs/',
 					    picture: 'http://ancient-lake-9185.herokuapp.com/assets'+badukoosCacheBuster,
-					    caption: 'Reference Documentation',
-					    description: 'testing'
+					    caption: 'Hi-eee! Will you help me dress my chin for spring?',
+					    description: 'Sreejith cannot decide on a moe. Will you help him?'
 					  },
 					  function(response) {
 					    if (response && response.post_id) {
-					      alert('Post was published.');
+					      return;
 					    } else {
-					      alert('Post was not published.');
+					      throw Error('Sorry, Post was not published. Please try again later');
 					    }
 					  }
 					);
