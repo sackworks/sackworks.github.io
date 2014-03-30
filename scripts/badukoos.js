@@ -11,7 +11,7 @@ var Badukoos = (function(w, d) {
 		bobbleHead();		
 	},
 	triggies = [],
-	sreejeeGoodies = ["#moe", "#devil", "#smooth"],
+	sreejeeGoodies = ["#moe", "#wwmoe", "#devil", "#smooth"],
 	sreejHead = "#sreej",
 	$socialcontainer = $(".social"),
 	$shareEl = $("#share").length > 0 ? $("#share") : null;	
