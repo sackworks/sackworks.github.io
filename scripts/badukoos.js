@@ -142,8 +142,8 @@ var Badukoos = (function(w, d) {
   			onrendered: function(canvas) {
   				convertCanvasToImage(canvas);				
   			},
-  			width: 1500,
-  			height: 1500
+  			width: 600,
+  			height: 500
 		});		
 
 	};
