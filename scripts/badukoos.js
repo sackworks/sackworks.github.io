@@ -112,7 +112,7 @@ var Badukoos = (function(w, d) {
 					FB.ui(
 					  {
 					    method: 'feed',
-					    name: 'Choose a Moe for Sreejith',
+					    name: 'Choose A Beard for Sreejith',
 					    link: 'http://www.badukoos.com',
 					    picture: 'http://ancient-lake-9185.herokuapp.com/assets'+badukoosCacheBuster,
 					    caption: 'Hi-eee! Will you help me dress my chin for spring?',
