@@ -5,16 +5,18 @@ var Popup = function(url, size, w) {
 var Badukoos = (function(w, d) {
 
 	//private methods, members
-	var init = function () {
+	var triggies = [],
+		sreejeeGoodies = ["#moe", "#wwmoe", "#devil", "#smooth"],
+		sreejHead = "#sreej",
+		$socialcontainer = $(".social"),
+		$shareEl = $("#share").length > 0 ? $("#share") : null,
+	
+	init = function () {
+		//setHeights(".sreejithhead, .sreejith-goodies");
 		setListeners();
 		setSocialListeners();
 		bobbleHead("oops");		
-	},
-	triggies = [],
-	sreejeeGoodies = ["#moe", "#wwmoe", "#devil", "#smooth"],
-	sreejHead = "#sreej",
-	$socialcontainer = $(".social"),
-	$shareEl = $("#share").length > 0 ? $("#share") : null;	
+	};	
 
 	var moveGoodie = function(e){
 		$(e.data).css("margin", 0);								
@@ -58,46 +60,38 @@ var Badukoos = (function(w, d) {
 					bobbleHead("no"+random, true);
 				}
 		  }
-		});
-		// $(sreejeeGoodies).each(function(i, thing){
-
-		// 	triggies.push(false);
-		// 	$(thing).on("click", function(e) {
-		// 		debugger;
-		// 		var random = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-		// 		if(!triggies[i]) {
-		// 			//$(d).bind('mousemove', thing, moveGoodie);
-		// 		} else {					
-		// 			//$(d).unbind('mousemove', moveGoodie);
-		// 			makeCanvasSnapshot();
-		// 			if(thing.indexOf("devil") !== -1) { 						
-		// 				bobbleHead("yeah", true) 
-		// 			} else {						
-		// 				bobbleHead("no"+random, true);
-		// 			}
-		// 		}			
-		// 		triggies[i] = !triggies[i];
-		// 	});
-		// });
+		});		
 		$(w).on("resize", function() {	
 			$(sreejeeGoodies).each(function(i, thing){
 				if($(thing).attr("style") != "") {
 					$(thing).removeAttr("style");
 				}
 			});
+			//setHeights();
 		});
 		$(".js-buttons-for-save-share").on("click", "button", function(e){
 			e.preventDefault();
 			sharePanel(e); 
 		});
-
+		$(".sreejithhead, .sreejith-goodies").on("click", function() {			
+			$shareEl.blur();
+		});
+		$shareEl.on("blur", function() {			
+			$shareEl.hide();		
+		});
+	};
+	/**
+		Set Heights for both buckets
+	**/
+	var setHeights = function(buckets) {
+		$(buckets).height($(w).height());
 	};
 	/**
 		Reveal Share 
 	**/	
 	var sharePanel = function(e) {
 		console.log("sharePanel::", e);			
-		openShare();		
+		openShare();
 	};
 	
 	/**
@@ -192,8 +186,9 @@ var Badukoos = (function(w, d) {
 		});
 	};
 
-	var openShare = function() {				
-		$shareEl.show();		
+	var openShare = function() {		
+		$shareEl.show();
+		$shareEl.focus();
 	};
 
 	return {
