@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>		
+<html itemscope itemtype="http://schema.org/Person">
 	<head>		
 		<link rel="stylesheet" href="css/style.css">
 		<!--<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>-->
@@ -7,8 +7,10 @@
 		<script src="scripts/jquery-1.10.2.js"></script>
 		<script src="scripts/jquery-ui-1.10.4.custom.min.js"></script>
 		<script src="scripts/jquery.ui.touch-punch.min.js"></script>
-		<script src="scripts/html2canvas.js"></script>
-		
+		<script src="scripts/html2canvas.js"></script>		
+		<meta itemprop="name" content="Badukoos">
+		<meta itemprop="description" content="&#39;Hi-eee! Will you help me dress my chin for spring?&#39;">
+		<meta itemprop="image" content="http://ancient-lake-9185.herokuapp.com/assets">
 	</head>
 	<body>
 		<div id="fb-root"></div>
@@ -28,6 +30,13 @@
 	         js.src = "//connect.facebook.net/en_US/all.js";
 	         fjs.parentNode.insertBefore(js, fjs);
 	       }(document, 'script', 'facebook-jssdk'));
+	      
+	      (function() {
+    		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    		po.src = 'https://apis.google.com/js/plusone.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  			})();
+
 	    </script>
 		<nav class="sreejith-goodies">			
 			<figure>
@@ -71,9 +80,10 @@
 						</a>											
 					</li>
 					<li class="googleplus">
-					<a href="https://plus.google.com/share">
+					<!-- <a href="https://plus.google.com/share">
 						<img src="imgs/icons/googleplus.png" />
-					</a>
+					</a> -->
+					<g:plus action="share"></g:plus>
 					</li>
 				</ul>
 			</div>
