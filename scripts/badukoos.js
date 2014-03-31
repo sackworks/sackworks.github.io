@@ -113,7 +113,7 @@ var Badukoos = (function(w, d) {
 					  {
 					    method: 'feed',
 					    name: 'Choose a Moe for Sreejith',
-					    link: 'https://developers.facebook.com/docs/dialogs/',
+					    link: 'http://www.badukoos.com',
 					    picture: 'http://ancient-lake-9185.herokuapp.com/assets'+badukoosCacheBuster,
 					    caption: 'Hi-eee! Will you help me dress my chin for spring?',
 					    description: 'Sreejith cannot decide on a moe. Will you help him?'
