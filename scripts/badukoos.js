@@ -128,8 +128,8 @@ var Badukoos = (function(w, d) {
 					);
 
 				}
-				if(link.href.indexOf("plus") > 0) {
-					GPlus = Popup(link.href+"?u="+"http%3A%2F%2Fwww.badukoos.com", null, w);	
+				if(link.href.indexOf("plus") > 0) {					
+					GPlus = Popup(link.href+"?url="+"http%3A%2F%2Fwww.badukoos.com", null, w);	
 				}
 			});
 		});
